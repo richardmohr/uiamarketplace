@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Automation Patterns Marketplace</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #333;
+        background-image: url("./images/background-light.png");
+        background-size: cover;
+        opacity: 0.95;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        max-width: 85%;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .header-box {
+        background-color: #ff6600;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-title {
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .header-title img {
+        width: 150px;
+        height: auto;
+        margin-right: 1px;
+      }
+      .nav-link {
+        color: white;
+        font-weight: bold;
+        margin-right: 15px;
+      }
+      .nav-link:hover {
+        color: #ffe5cc;
+      }
+      .search-box {
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      .offerings-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .offering-box {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 25px;
+        text-align: center;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        width: 23%;
+      }
+      .offering-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #ff6600;
+      }
+      .vendor-info {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .vendor-icon {
+        margin-top: 10px;
+      }
+      .offering-status {
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 15px;
+      }
+      .status-design {
+        background-color: #007bff;
+      }
+      .status-mvp {
+        background-color: #ffc107;
+      }
+      .status-pluggable {
+        background-color: #28a745;
+      }
+      .btn-primary {
+        background-color: #ff6600;
+        border-color: #ff6600;
+        font-weight: bold;
+      }
+      .btn-primary:hover {
+        background-color: #e65c00;
+        border-color: #e65c00;
+      }
+      .footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 8px;
+      }
+      .footer a {
+        color: #ff6600;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        color: #e65c00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header-box">
+        <span class="header-title">
+          <img src="mnt/data/image.png" alt="Robot Handshake Icon" />
+          Automation Patterns Marketplace
+        </span>
+        <nav class="nav">
+          <a class="nav-link" href="#">Hire2Retire</a>
+          <a class="nav-link" href="#">IdeaToProduct</a>
+          <a class="nav-link" href="#">Product2Market</a>
+          <a class="nav-link" href="#">OfferToOrder</a>
+          <a class="nav-link" href="#">OrderToCash</a>
+          <a class="nav-link" href="#">IncidentToService</a>
+          <a class="nav-link" href="#">DemandToPay</a>
+        </nav>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <input
+          type="text"
+          class="form-control"
+          id="search-input"
+          placeholder="Search for automation patterns..."
+        />
+      </div>
+
+      <!-- Offering Box Examples -->
+      <div class="offerings-container" id="offerings-container">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        &copy; 2024 Automation Patterns Marketplace. All rights reserved.
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <br />
+        Follow us on
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+      </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      // Sample offerings data
+      const offerings = [
+        {
+          title: "Source new Suppliers",
+          icon: "🔍",
+          description: "Identify and engage new suppliers to expand your sourcing options and improve supply chain resilience.",
+          status: "MVP",
+          price: "Process & Solution Handbook € 6,500 <br> MVP Solution € 12.000",
+          vendor: "UnchAIned Automation",
+        },
+        {
+          title: "Supplier Management",
+          icon: "👥",
+          description: "Manage supplier relationships and performance to ensure consistent quality and collaboration.",
+          status: "MVP",
+          price: "Process & Solution Handbook € 6,500 <br> MVP Solution € 12.000",
+          vendor: "UnchAIned Automation",
+        },
+        {
+          title: "Purchase Order Management",
+          icon: "📜",
+          description: "Automate the creation, tracking, and management of purchase orders to streamline procurement.",
+          status: "Pluggable",
+          price: "Process & Solution Handbook € 6,500 <br> Pluggable Solution € 20.000",
+          vendor: "UnchAIned Automation",
+        },
+        {
+          title: "Order Inbound",
+          icon: "📥",
+          description: "Ensure smooth handling of inbound orders, from receiving to processing for optimal efficiency.",
+          status: "MVP",
+          price: "Process & Solution Handbook € 6,500 <br> MVP Solution € 12.000",
+          vendor: "UnchAIned Automation",
+        },
+      ];
+
+      // Function to render offering boxes dynamically
+      function renderOfferings(offerings) {
+        const offeringsContainer = document.getElementById("offerings-container");
+        offeringsContainer.innerHTML = "";
+        offerings.forEach((offering) => {
+          const offeringBox = document.createElement("div");
+          offeringBox.className = "offering-box";
+          offeringBox.setAttribute("data-title", offering.title);
+
+          offeringBox.innerHTML = `
+            <div class="offering-icon">${offering.icon}</div>
+            <h4>${offering.title}</h4>
+            <p>${offering.description}</p>
+            <div class="offering-status status-${offering.status.toLowerCase().replace(/ /g, '-')}">Status: ${offering.status}</div>
+            <div class="price mt-3">Price: ${offering.price}</div>
+            <div class="vendor-info">Vendor: ${offering.vendor}</div>
+            <div class="vendor-icon mt-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 30px; height: auto;"><path d="M20.24,4.76l-1.41-1.41c-1.56-1.56-4.09-1.56-5.66,0L11.17,5.35l1.41,1.41,2-2c.78-.78,2.05-.78,2.83,0l1.41,1.41c.78.78.78,2.05,0,2.83l-2,2,1.41,1.41,2-2C21.8,8.85,21.8,6.32,20.24,4.76ZM6.34,15.66l2-2-1.41-1.41-2,2c-1.56,1.56-1.56,4.09,0,5.66l1.41,1.41c1.56,1.56,4.09,1.56,5.66,0l2-2-1.41-1.41-2,2c-.78.78-2.05.78-2.83,0l-1.41-1.41C5.56,17.71,5.56,16.44,6.34,15.66Zm5.08-6.92,3.76,3.76L11.76,15l-3.76-3.76Z"/></svg>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="window.location.href='Details.html'">View Details</button>
+
+          `;
+
+          offeringsContainer.appendChild(offeringBox);
+        });
+      }
+
+      // Initial rendering of offerings
+      renderOfferings(offerings);
+
+      // Search functionality
+      document.getElementById('search-input').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const filteredOfferings = offerings.filter(offering =>
+          offering.title.toLowerCase().includes(searchTerm)
+        );
+        renderOfferings(filteredOfferings);
+      });
+    </script>
+  </body>
+</html>

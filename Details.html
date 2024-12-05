@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Offering Details - Automation Patterns Marketplace</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #ffffff;
+        color: #333;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url("./images/background-light.png");
+        background-size: cover;
+        opacity: 0.95;
+      }
+      .container {
+        max-width: 85%;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .header-box {
+        background-color: #ff6600;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+      .header-title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        flex-grow: 1;
+      }
+      .header-title img {
+        width: 50px;
+        height: auto;
+        margin-right: 15px;
+      }
+      .box {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        position: relative;
+        height: 100%;
+      }
+      .box-icon {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 30px;
+        color: #ff6600;
+      }
+      .footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 8px;
+      }
+      .footer a {
+        color: #ff6600;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        color: #e65c00;
+      }
+      .btn-purchase {
+        background-color: #ff6600;
+        border-color: #ff6600;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .btn-purchase:hover {
+        background-color: #e65c00;
+        border-color: #e65c00;
+      }
+      .row {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .col-md-6 {
+        display: flex;
+        flex-direction: column;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-top: 60px;
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .btn-buy {
+        background-color: #28a745;
+        border-color: #28a745;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .btn-buy:hover {
+        background-color: #218838;
+        border-color: #218838;
+      }
+      .preview-image {
+        width: 100px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header-box">
+        <div class="header-left">
+          <img src="mnt/data/image_small.png" alt="Offering Icon" />
+        </div>
+        <div class="header-title">
+          Offering Details - Source new Suppliers
+        </div>
+        <div>
+          <span style="font-size: 18px;">Vendor: UnchAIned Automation | Version: V1.4</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Description Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Description of the Process / Why Buy ?</h5>
+            <p>This process helps to identify and engage new suppliers, expanding sourcing options and improving supply chain resilience. It starts from supplier demand and ends at having a Shortlist for the concrete RFQ.
+			<br> Why you should go for it ? <br> 
+			<li>💰 <strong>Affordability</strong>: You cannot afford SAP Ariba Sourcing.</li>
+            <li>🚀 <strong>Enhanced Capabilities</strong>: Microsoft Dynamics 365 products effectively support processes like supplier selection, evaluation, and RFQ management, streamlining these areas with automation and data insights. However, they do not directly facilitate the initial sourcing of new suppliers.</li>
+			</p>
+            <span class="box-icon">🔎</span>
+          </div>
+        </div>
+
+        	  
+	  <!-- BPMN Preview Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Process Preview (BPMN)</h5>
+            <img src="mnt/data/preview_process.png" alt="BPMN Process Preview" class="preview-image" onclick="openImageModal('mnt/data/preview_process.png')" />
+            <span class="box-icon">📈</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Technical Details Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Technical Details</h5>
+            <p>Number of Services Used: 12</p>
+            <p>Solution Platforms Used: Open AI, Microsoft Azure, BING Search, Google Business, Web Scraping</p>
+            <p>Solution Components: 1 Power App, 6 Power Automate Flows, 4 Dataverse Tables</p>
+            <p>Technical Process Trigger: Incoming Demand Campaign Request from Purchasing Department per eMail</p>
+            <span class="box-icon">💡</span>
+          </div>
+        </div>
+
+        <!-- Technical Requirements Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Technical Requirements</h5>
+            <p>Power Automate License, Hugging Face Premium, Azure Tenant</p>
+            <span class="box-icon">🔧</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- SAP Reference Process Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>SAP Reference Process</h5>
+            <img src="mnt/data/sap.svg" alt="SAP Reference Process Preview" class="preview-image" onclick="openImageModal('mnt/data/sap.svg')" />
+            <span class="box-icon">📄</span>
+          </div>
+        </div>
+
+        <!-- Organizations Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Organizations that Purchased this Process</h5>
+            <p>1. Global Logistics Inc.</p>
+            <p>2. SupplyTech Innovators</p>
+            <p>3. Automotive Sourcing Solutions</p>
+            <span class="box-icon">👥</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Screenshots Box -->
+        <div class="col-md-6">
+          <div class="box">
+            <h5>Screenshots</h5>
+            <img src="mnt/data/screenshot1.png" alt="Screenshot 1" class="preview-image mb-2" onclick="openImageModal('mnt/data/screenshot1.png')" />
+            <img src="mnt/data/screenshot2.png" alt="Screenshot 2" class="preview-image" onclick="openImageModal('mnt/data/screenshot2.png')" />
+            <span class="box-icon">📸</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Purchase Options -->
+      <div class="text-center mt-4">
+        <button class="btn btn-purchase" onclick="openModal('modalProcess')">Purchase Process</button>
+        <button class="btn btn-purchase" onclick="openModal('modalSolution')">Purchase Solution</button>
+        <button class="btn btn-purchase" onclick="openModal('modalExtension')">Purchase Extension Platform</button>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalProcess" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalProcess')">&times;</span>
+        <p><strong>Purchasing the Process</strong> will allow you to:<br>
+          <br>📄 <strong>Download the full BPMN Process</strong><br>
+          <br>📊 <strong>Access the Price Simulation</strong><br>
+          <br>📘 <strong>Receive the Implementation Handbook</strong> with all services and details listed on how to implement it.
+        </p>
+        <button class="btn btn-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="modalSolution" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalSolution')">&times;</span>
+        <p><strong>Purchasing the Solution</strong> gives you the right to:<br>
+          <br>📄 <strong>Download the full BPMN Solution</strong><br>
+          <br>📊 <strong>Access the Price Simulation</strong><br>
+          <br>📘 <strong>Receive the Implementation Handbook</strong><br>
+          <br>📦 <strong>Solution Package for the target platform</strong>, including 1 Consulting Day for setting up the solution in your target environment.
+        </p>
+        <button class="btn btn-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="modalExtension" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalExtension')">&times;</span>
+        <p><strong>Purchasing the Extension Platform</strong> enables you to:<br>
+          <br>⚙️ <strong>Get access to the Modelling Engine</strong><br>
+          <br>🌐 <strong>Access the Simulation Portal</strong> to extend and manage the lifecycle of your End2End Automation accordingly.
+        </p>
+        <button class="btn btn-buy">Buy</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        &copy; 2024 Automation Patterns Marketplace. All rights reserved.
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <br />
+        Follow us on
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+      </p>
+    </div>
+
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+
+      function openImageModal(imageSrc) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.style.display = 'block';
+  modal.innerHTML = `
+    <div class="modal-content" style="background-color: #fefefe; margin: auto; padding: 20px; border: 1px solid #888; width: 80%; border-radius: 10px;">
+      <span class="close" onclick="closeImageModal(modal)">&times;</span>
+      <img src="${imageSrc}" alt="Modal Image" style="width: 100%; border-radius: 5px;">
+    </div>`;
+  document.body.appendChild(modal);
+
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal || event.target.className === 'close') {
+      closeImageModal(modal);
+    }
+  });
+}
+
+function closeImageModal(modal) {
+  document.body.removeChild(modal);
+}
+</script>
+  </body>
+</html>
+
