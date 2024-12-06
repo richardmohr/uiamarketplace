@@ -128,6 +128,27 @@
       .footer a:hover {
         color: #e65c00;
       }
+	.onboard-box {
+  background-color: black;
+  padding: 15px 30px;
+  border-radius: 12px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.onboard-btn {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
     </style>
   </head>
   <body>
@@ -147,6 +168,11 @@
           <a class="nav-link" href="#">IncidentToService</a>
           <a class="nav-link" href="#">DemandToPay</a>
         </nav>
+		<div class="onboard-box">
+    <a href="mnt/data/onboard_now.pdf" download class="btn onboard-btn">
+      Onboard Now <i class="fas fa-download"></i>
+    </a>
+  </div>
       </div>
 
       <!-- Search Box -->
